@@ -1,0 +1,43 @@
+<head>
+    <style>
+        /* 헤더 검색 버튼 텍스트 제거 */
+        div.search-button>span {
+            display: none !important;
+        }
+
+        /* 헤더 검색 버튼 배경색 고정 */
+        div.theme-button>div.react-switch-bg {
+            background: #d2d2d2 !important;
+        }
+
+        /* 리스트 아이템 아이콘 제거 */
+        div[role="button"]>div>div:has(svg) {
+            display: none !important;
+        }
+
+        /* 댓글 영역 마진 */
+        div.oopy-utterances {
+            margin-top: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        /* DB 속성 출력 항목 제한 */
+        (function () {
+            var postAtLeft = Array.from(document.querySelector('.notion-scroller').children[1].querySelectorAll('div'))
+                .find(div => div.innerText === '게시일' && div.style['white-space'] === 'nowrap')
+                .parentElement.parentElement.parentElement;
+            if (!postAtLeft) return;
+            var postAtProp = postAtLeft.parentElement;
+            var postAtRight = postAtProp.children[1];
+            var props = Array.from(postAtProp.parentElement.children);
+
+            props.forEach((prop, index) => index && prop.remove());
+            postAtRight.style['margin-left'] = '-6px';
+            postAtRight.children[0].style.cursor = 'default';
+            postAtLeft.remove();
+        })();
+    </script>
+</body>

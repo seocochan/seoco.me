@@ -1,0 +1,29 @@
+<head>
+    <style>
+        /* 타이틀 영역 마진 조정 */
+        h1.page-title {
+            width: 140px !important;
+            letter-spacing: 20px;
+        }
+
+        div.notion-page-controls {
+            margin-top: 0;
+        }
+
+        /* 특정 블록 숨김 */
+        div[data-block-id="18b7e64a-f8d6-4842-9539-7f8bbc567956"] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        /* 타이틀 대치 출력 */
+        (function () {
+            var title = document.querySelector('.page-title');
+            if (!title) return console.log('title not found');
+            title.innerHTML = ['seo', 'co', '。'].map((it, index) => `<span style="filter: blur(${Math.exp(index + 1) / 4}px);">${it}</span>`).join('<br/>');
+        })();
+    </script>
+</body>

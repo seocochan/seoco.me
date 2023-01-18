@@ -7,3 +7,5 @@ Personal website for random posting.
 <br/>
 
 Currently, this repository is being used for [Utterances](https://utteranc.es) comments.
+
+`/scripts`: customization configs applied to [oopy](https://www.oopy.io/ko/guides)
