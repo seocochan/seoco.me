@@ -11,7 +11,12 @@
         }
 
         /* 리스트 아이템 아이콘 제거 */
-        div[role="button"]>div>div:has(svg) {
+        a[role="button"]>div[tabindex="0"] {
+            display: none !important;
+        }
+
+        /* 기본 load more 버튼 제거 */
+        div[role="button"]:has(svg) {
             display: none !important;
         }
 
